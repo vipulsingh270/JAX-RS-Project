@@ -1,0 +1,5 @@
+package com.hr.config;
+
+public class JAXRSConfiguration {
+
+}

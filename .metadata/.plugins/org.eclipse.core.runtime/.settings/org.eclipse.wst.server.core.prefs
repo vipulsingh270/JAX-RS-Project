@@ -1,0 +1,3 @@
+eclipse.preferences.version=1
+module-start-timeout=300000
+runtimes=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?>\r\n<runtimes>\r\n  <runtime id\="GlassFish 5 (2)" location\="H\:/Glassfish/glassfish5/glassfish" name\="GlassFish 5 (2)" runtime-type-id\="glassfish" server.jdk\="C\:\\Program Files\\Java\\jdk1.8.0_191" timestamp\="1"/>\r\n</runtimes>\r\n

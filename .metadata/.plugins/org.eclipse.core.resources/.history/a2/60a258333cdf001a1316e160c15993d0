@@ -1,0 +1,41 @@
+package com.hr.service;
+
+import java.util.Collection;
+
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+import javax.transaction.Transactional;
+
+import com.hr.entity.Employee;
+import com.hr.entity.Team;
+
+@Transactional
+public class PersistenceService {
+	
+	@PersistenceContext
+	EntityManager em;
+	
+	public void saveTeam(Team team) {		
+		em.persist(team);
+	}
+	
+	public void saveEmployee(Employee employee) {
+		em.persist(employee);		
+	}
+	
+	public void saveEmployee(Employee employee, Team team) {
+		employee.setTeam(team);
+		em.merge(employee);
+		
+	}
+	
+	public Employee getEmployeebyId(Long id) {
+		return em.find(Employee.class, id);
+	}
+	
+	public Collection<Employee> getAllEmployees(){
+		
+		return em.createNamedQuery("ListEmployees", Employee.class).getResultList();
+		
+	}
+}

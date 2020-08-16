@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<servers>
+  <server auto-publish-setting="1" glassfish.adminserverportnumber="4848" glassfish.domainpath="H:\Glassfish\glassfish5\glassfish\domains\domain1" glassfish.jarDeploy="true" glassfish.serverportnumber="8080" hostname="localhost" id="GlassFish 5 (2) [domain1]" name="GlassFish 5 (2) [domain1]" runtime-id="GlassFish 5 (2)" server-type="glassfish.server" server-type-id="glassfish.server" start-timeout="240" stop-timeout="240" timestamp="29">
+    <list key="modules" value0="javaee-api::org.eclipse.jst.jee.server:javaee-api::jst.web::3.0"/>
+  </server>
+</servers>

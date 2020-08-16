@@ -1,0 +1,46 @@
+package com.hr.resource;
+
+import java.net.URI;
+
+import javax.inject.Inject;
+import javax.validation.Valid;
+import javax.ws.rs.Consumes;
+import javax.ws.rs.GET;
+import javax.ws.rs.POST;
+import javax.ws.rs.Path;
+import javax.ws.rs.Produces;
+import javax.ws.rs.core.Context;
+import javax.ws.rs.core.Response;
+import javax.ws.rs.core.UriInfo;
+
+import com.hr.entity.Employee;
+import com.hr.service.PersistenceService;
+
+@Path("employee")
+@Produces("application/json")
+@Consumes("application/json")
+public class EmployeeResource {
+	
+	@Inject
+	PersistenceService ps;
+	
+	@Context
+	private UriInfo uriInfo;
+	
+	@GET
+	@Path("helloWorld")
+	public String returnHelloWorld() {
+		return "Welcome to First J2EE Vipul";
+	}
+	
+	@POST
+	@Path("create")
+	public Response createEmployee(@Valid Employee employee) {
+		System.out.print(employee.getName());
+		System.out.print(employee.getTeam().getName());
+		ps.saveEmployee(employee);
+		URI uri = uriInfo.getAbsolutePathBuilder().path(String.valueOf(employee.getEmployeeId())).build();
+		return Response.created(uri).status(Response.Status.CREATED).build();
+	}
+
+}
